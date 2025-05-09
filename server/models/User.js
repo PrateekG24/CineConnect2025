@@ -50,6 +50,21 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
+  following: [{
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    username: {
+      type: String,
+      required: true
+    },
+    followedAt: {
+      type: Date,
+      default: Date.now
+    }
+  }],
   watchlist: [{
     mediaType: {
       type: String,

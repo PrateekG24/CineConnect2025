@@ -2,6 +2,7 @@ import axios from 'axios';
 
 // Use environment variable for API URL with fallback to local development URL
 const API_URL = import.meta.env.VITE_API_URL || 'https://cineconnect-api.onrender.com/api';
+// const API_URL = 'http://localhost:5000/api';
 const TMDB_IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 
 console.log('API URL:', API_URL); // Debug API URL
@@ -121,6 +122,13 @@ export const userAPI = {
     api.post('/reviews', { mediaId, mediaType, ...data }),
   getUserReviews: () => api.get('/reviews'),
   deleteReview: (reviewId) => api.delete(`/reviews/${reviewId}`),
+  // Friend-related API functions
+  searchUsers: (username) => api.get(`/users/search?username=${username}`),
+  followUser: (userId) => api.post(`/users/follow`, { userId }),
+  unfollowUser: (userId) => api.delete(`/users/follow/${userId}`),
+  getFollowing: () => api.get('/users/following'),
+  getFollowingReviews: () => api.get('/users/following/reviews'),
+  getUserReviewsById: (userId) => api.get(`/users/reviews/${userId}`),
 };
 
 // Helper functions for image URLs

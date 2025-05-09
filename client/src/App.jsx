@@ -13,6 +13,7 @@ import Register from "./pages/Register";
 import Watchlist from "./pages/Watchlist";
 import MyReviews from "./pages/MyReviews";
 import Profile from "./pages/Profile";
+import Friends from "./pages/Friends";
 import VerifyEmail from "./pages/VerifyEmail";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -188,6 +189,14 @@ function App() {
               element={
                 <ProtectedRoute user={user}>
                   <MyReviews />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/friends"
+              element={
+                <ProtectedRoute user={user}>
+                  <Friends />
                 </ProtectedRoute>
               }
             />

@@ -24,7 +24,7 @@ router.get('/profile', protect, getUserProfile);
 router.put('/profile', protect, updateUserProfile);
 router.post('/resend-verification', protect, resendVerificationEmail);
 
-// Watchlist routes have been moved to a separate controller
+// Watchlist routes
 const {
   addToWatchlist,
   removeFromWatchlist,
@@ -34,5 +34,22 @@ const {
 router.get('/watchlist', protect, getWatchlist);
 router.post('/watchlist', protect, addToWatchlist);
 router.delete('/watchlist/:mediaId', protect, removeFromWatchlist);
+
+// Friend-related routes
+const {
+  searchUsers,
+  followUser,
+  unfollowUser,
+  getFollowing,
+  getFollowingReviews,
+  getUserReviewsById
+} = require('../controllers/friendController');
+
+router.get('/search', protect, searchUsers);
+router.post('/follow', protect, followUser);
+router.delete('/follow/:userId', protect, unfollowUser);
+router.get('/following', protect, getFollowing);
+router.get('/following/reviews', protect, getFollowingReviews);
+router.get('/reviews/:userId', protect, getUserReviewsById);
 
 module.exports = router; 

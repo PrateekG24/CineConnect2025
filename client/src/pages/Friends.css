@@ -1,0 +1,349 @@
+.friends-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.friends-container h1 {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Search container */
+.search-container {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.search-container form {
+  display: flex;
+  width: 100%;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+.search-container button {
+  padding: 12px 24px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+  background-color: #b20710;
+}
+
+.search-container button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+/* Tabs */
+.friends-tabs {
+  display: flex;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ccc;
+}
+
+.friends-tabs button {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.3s;
+}
+
+.friends-tabs button.active {
+  border-bottom: 3px solid #e50914;
+  font-weight: bold;
+}
+
+.friends-tabs button:hover:not(.active) {
+  border-bottom: 3px solid #b20710;
+}
+
+/* Loading and error states */
+.loading, .error-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.error-message {
+  color: #e50914;
+  background-color: rgba(229, 9, 20, 0.1);
+  border-radius: 4px;
+}
+
+/* Card styles */
+.tab-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.friend-card, .review-card, .user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.friend-card:hover, .review-card:hover, .user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.friend-info, .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.friend-avatar, .user-avatar {
+  font-size: 28px;
+  margin-right: 12px;
+  background-color: #333;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.friend-info h3, .user-info h3 {
+  margin: 0 0 4px 0;
+}
+
+.friend-info p {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Button styles */
+.follow-btn, .unfollow-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.follow-btn {
+  background-color: #e50914;
+  color: white;
+}
+
+.follow-btn:hover {
+  background-color: #b20710;
+}
+
+.unfollow-btn {
+  background-color: #333;
+  color: white;
+}
+
+.unfollow-btn:hover {
+  background-color: #555;
+}
+
+/* Review card specific styles */
+.review-card {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.review-header h3 {
+  margin: 0;
+}
+
+.rating {
+  background-color: #333;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.review-media {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.review-media img {
+  width: 60px;
+  height: auto;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+.review-media h4 {
+  margin: 0 0 4px 0;
+}
+
+.review-media p {
+  margin: 0;
+  color: #aaa;
+}
+
+.review-content {
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.review-date {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+  align-self: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .friends-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .friends-tabs button {
+    flex: 1;
+    min-width: 33%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .friend-info h3, .user-info h3 {
+    font-size: 16px;
+  }
+  
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .rating {
+    margin-top: 8px;
+  }
+}
+
+/* Container for following list and selected friend reviews */
+.following-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .following-list-container {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .following-list {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .friend-reviews {
+    flex: 1;
+    max-width: 50%;
+  }
+}
+
+/* Selected friend card */
+.friend-card {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.friend-card:hover {
+  background-color: #333;
+}
+
+.friend-card.selected {
+  background-color: #444;
+  border-left: 4px solid #e50914;
+}
+
+/* Friend info and actions layout */
+.friend-info {
+  flex-direction: row;
+  display: flex;
+  flex: 1;
+}
+
+.friend-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Reviews button */
+.reviews-btn {
+  padding: 8px 16px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.reviews-btn:hover {
+  background-color: #666;
+}
+
+/* Friend reviews section */
+.friend-reviews {
+  background-color: #222;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.friend-reviews h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 8px;
+}
+
+.reviews-list {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+@media (min-width: 992px) {
+  .friend-reviews {
+    margin-top: 0;
+    max-height: 700px;
+    overflow-y: auto;
+  }
+} 

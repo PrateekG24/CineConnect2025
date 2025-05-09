@@ -163,6 +163,9 @@ const Navbar = ({ user, logout }) => {
                   <Link to="/profile" onClick={() => setIsDropdownOpen(false)}>
                     My Profile
                   </Link>
+                  <Link to="/friends" onClick={() => setIsDropdownOpen(false)}>
+                    Search Friends
+                  </Link>
                   <button
                     onClick={() => {
                       logout();
