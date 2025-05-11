@@ -36,11 +36,7 @@ A movie website built with the MERN stack and the TMDB API. The application allo
 
 ## Live Site!
 
-### Access the hosted application on:
-
-```bash
-🔗 https://cineconnect-app.onrender.com/
-```
+### Access the hosted application on: https://cineconnect-app.onrender.com/
 
 ## Project Structure
 
