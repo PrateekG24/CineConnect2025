@@ -68,6 +68,17 @@ A movie website built with the MERN stack and the TMDB API. The application allo
 └── README.md
 ```
 
+## Team
+
+| Name              | Email                                  |
+|-------------------|-----------------------------------------|
+| Prateek Gupta     | [prateek_2301cs66@iitp.ac.in](mailto:prateek_2301cs66@iitp.ac.in) |
+| Aryan Phad        | [aryan_2301cs09@iitp.ac.in](mailto:aryan_2301cs09@iitp.ac.in) |
+| Sreyas Kotha      | [sreyas_2301cs53@iitp.ac.in](mailto:sreyas_2301cs53@iitp.ac.in) |
+| Anish Raghashetty | [anish_2301cs05@iitp.ac.in](mailto:anish_2301cs05@iitp.ac.in) |
+| Sahil Shaikh      | [shaikh_2301cs76@iitp.ac.in](mailto:shaikh_2301cs76@iitp.ac.in) |
+
+
 ## License
 
 This project is licensed under the MIT License.
